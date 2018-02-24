@@ -1,4 +1,19 @@
-Error codes:
-- E_OK = 0 -> No error, everything is fine
-- E_FAILED = 1 -> Unknown error, just contact administrators
-
+Error codes: (count from 100)
+- E_OK = 100 -> No error, everything is fine
+- E_FAILED = 101 -> Unknown error, just contact administrators
+- E_MYSQLIQUERY = 102 -> Mysqli -> query error
+- E_EMAILNOTEXISTS = 103 -> Email provided not exists in database
+- E_EMAILNOTUNIQUE = 104 -> More than 1 entries match this email
+- E_PRODUCTNOTEXISTS = 105 -> Product code doesn't exist
+- E_PRODUCTNOTUNIQUE = 106 -> Product code is not unique
+Tables: 
+- Users: USERID, Email = "someone@example.com", Password = "********", Name = "***", City = "***", Country = "***", LastLogin
+- Orders: ORDERID, Email = "someone@example.com", Product = 00000000, Status = 0, Description = "No comment"
+- Products: PRODUCTID (Product_code), Name, Price, Currency, 
+- Confirmations: 
+Order status: (count from 0)
+- S_NOTYETCONFIRMED = 0 -> Not yet confirmed
+- S_EMAILCONFIRMED = 1 -> Email confirmed - Waiting to process
+- S_PROCESSING = 2 -> Processing
+- S_SUCCESSFULLY = 3 -> Successfully
+- S_UNSUCCESSFULLY = 4 -> Unsuccessfully 
