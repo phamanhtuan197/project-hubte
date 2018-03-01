@@ -6,11 +6,12 @@ Error codes: (count from 100)
 - E_EMAILNOTUNIQUE = 104 -> More than 1 entries match this email
 - E_PRODUCTNOTEXISTS = 105 -> Product code doesn't exist
 - E_PRODUCTNOTUNIQUE = 106 -> Product code is not unique
+- E_ORDERMISMATCH = 107 -> Something mismatch in Orders
 Tables: 
 - Users: USERID, Email = "someone@example.com", Password = "********", Name = "***", City = "***", Country = "***", LastLogin
 - Orders: ORDERID, Email = "someone@example.com", Product = 00000000, Status = 0, Description = "No comment"
-- Products: PRODUCTID (Product_code), Name, Price, Currency, 
-- Confirmations: 
+- Products: PRODUCTID (Product_code), Name, Price, Currency
+- Confirmations: ORDERID, Password, Time
 Order status: (count from 0)
 - S_NOTYETCONFIRMED = 0 -> Not yet confirmed
 - S_EMAILCONFIRMED = 1 -> Email confirmed - Waiting to process
